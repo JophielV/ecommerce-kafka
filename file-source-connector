@@ -1,0 +1,25 @@
+# This will tail a file and output it to a topic
+
+{
+  "connector.class": "org.apache.kafka.connect.file.FileStreamSourceConnector",
+  "file": "demo-file.txt",
+  "transforms.HoistField.field": "line",
+  "tasks.max": "1",
+  "transforms": "HoistField",
+  "transforms.HoistField.type": "org.apache.kafka.connect.transforms.HoistField$Value",
+  "value.converter.schemas.enable": "true",
+  "name": "sensor2",
+  "topic": "sensor2",
+  "value.converter": "org.apache.kafka.connect.json.JsonConverter"
+}
+
+connector.class=org.apache.kafka.connect.file.FileStreamSourceConnector
+file=demo-file.txt
+transforms.HoistField.field=line
+tasks.max=1
+transforms=HoistField
+transforms.HoistField.type=org.apache.kafka.connect.transforms.HoistField$Value
+name=sensor
+value.converter.schemas.enable=true
+topic=sensor
+value.converter=org.apache.kafka.connect.json.JsonConverter

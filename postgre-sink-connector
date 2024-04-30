@@ -1,0 +1,36 @@
+{
+  "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+  "connection.password": "postgres",
+  "tasks.max": "1",
+  "topics": "word-count-output",
+  "key.converter.schemas.enable": "false",
+  "auto.evolve": "true",
+  "connection.user": "postgres",
+  "value.converter.schemas.enable": "false",
+  "name": "sink-word-output",
+  "auto.create": "true",
+  "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+  "connection.url": "jdbc:postgresql://kafka-postgres:5432/postgres",
+  "insert.mode": "upsert",
+  "key.converter": " org.apache.kafka.connect.storage.StringConverter",
+  "pk.mode": "kafka",
+  "pk.fields": "__connect_topic,__connect_partition,__connect_offset"
+}
+
+connector.class=io.confluent.connect.jdbc.JdbcSinkConnector
+connection.password=postgres
+tasks.max=1
+topics=sensor2
+key.converter.schemas.enable=false
+fields.whitelist=line
+auto.evolve=true
+connection.user=postgres
+value.converter.schemas.enable=true
+name=sensor-sink2
+auto.create=true
+value.converter=org.apache.kafka.connect.json.JsonConverter
+connection.url=jdbc:postgresql://kafka-postgres:5432/postgres
+insert.mode=upsert
+key.converter=org.apache.kafka.connect.json.JsonConverter
+pk.mode=kafka
+pk.fields=__connect_topic,__connect_partition,__connect_offset
