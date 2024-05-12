@@ -9,10 +9,10 @@ USER appuser
 
 WORKDIR /
 COPY jdbc-connect.properties .
+COPY file-sink-connector.properties .
 
 WORKDIR /etc/schema-registry/
 COPY connect-avro-standalone.properties /etc/schema-registry/
-COPY values.yaml /etc/schema-registry/
 
 WORKDIR /usr/bin/
 COPY kafka-avro-console-consumer /usr/bin/
