@@ -70,3 +70,6 @@ epos/dist/*
 # Folder Repositories #
 postgres
 cookies
+
+#packages
+word-count/src/main/java/io/confluent/*
